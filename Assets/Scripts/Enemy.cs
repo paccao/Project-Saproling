@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private float attackRange = 4f;
-    [SerializeField] private float attackSpeed = 4f;
+    [SerializeField] private float attackSpeed = 3f;
     [SerializeField] private float attackDamage = 1f;
 
     private Vector3 newPosition;
@@ -47,9 +47,7 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-        // TODO: Spawn animation
-        GameObject.Instantiate(enemyAttack, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
-        // Deal damage to player
+        GameObject.Instantiate(enemyAttack, new Vector3(transform.position.x, transform.localPosition.y + 1.5f, transform.position.z), Quaternion.identity);
         GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(attackDamage);
     }
 }

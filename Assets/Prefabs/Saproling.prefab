@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5304328622557784282}
   - component: {fileID: 3417529505276375153}
   - component: {fileID: 1486771870946903487}
-  - component: {fileID: 6129811135173248925}
+  - component: {fileID: -7178133605311336955}
   m_Layer: 0
   m_Name: Saproling
   m_TagString: Enemy
@@ -154,10 +154,37 @@ MonoBehaviour:
     m_RotationOrder: 4
   enemyAttack: {fileID: 8810603805509348803, guid: 606cddff1e0cf2c46953bfea0220e93b, type: 3}
   rotateSpeed: 10
-  movementSpeed: 5
+  movementSpeed: 2
   attackRange: 4
-  attackSpeed: 4
+  attackSpeed: 3
   attackDamage: 1
+--- !u!54 &-7178133605311336955
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007842124459402751}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2742597297398192149
 GameObject:
   m_ObjectHideFlags: 0

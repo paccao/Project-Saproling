@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float health = 10f;
+    public float health = 5f;
 
     public void TakeDamage(float damage)
     {
@@ -16,9 +16,9 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        // Stop all movement 
+        // Stop all movement in the game
         // Enable death overlay
-        // Disable PlayerAttack functionality
+        // Disable PlayerAttack
         Debug.Log("Dead");
     }
 }
