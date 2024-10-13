@@ -4,9 +4,8 @@ public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private Transform ground;
     [SerializeField] private GameObject saproling;
-    [SerializeField] private GameObject motherTree;
     [SerializeField] private float spawnRate;
-    [SerializeField] private float spawnHeight = 0f;
+    [SerializeField] public float spawnHeight = 0.5f;
     private Vector3 topLeft;
     private Vector3 topRight;
     private Vector3 bottomLeft;

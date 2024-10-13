@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5304328622557784282}
   - component: {fileID: 3417529505276375153}
   - component: {fileID: 1486771870946903487}
-  - component: {fileID: 6129811135173248925}
+  - component: {fileID: -7178133605311336955}
   m_Layer: 0
   m_Name: Saproling
   m_TagString: Enemy
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3535411, y: 0.60954994, z: 1.3535411}
+  m_LocalScale: {x: 1.5, y: 0.7, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3132532533481104744}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45567df0fdcdfb47bb09e878ccfc2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motherTree: {fileID: 2596831393598511543, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
+  player: {fileID: 2596831393598511543, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -152,9 +152,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  movementSpeed: 10
-  _rotateSpeed: 10
---- !u!54 &6129811135173248925
+  enemyAttack: {fileID: 8810603805509348803, guid: 606cddff1e0cf2c46953bfea0220e93b, type: 3}
+  rotateSpeed: 10
+  movementSpeed: 2
+  attackRange: 4
+  attackSpeed: 3
+  attackDamage: 1
+--- !u!54 &-7178133605311336955
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
