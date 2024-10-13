@@ -4,31 +4,32 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform motherTree;
     [SerializeField] private AnimationCurve curve;
-    [SerializeField] private float movementSpeed = 0.1f;
-    [SerializeField] private float _rotateSpeed = 10f;
+    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private float movementSpeed = 2f;
+    [SerializeField] private float attackRange = 4f;
+
     private Vector3 newPosition;
 
-    //private void Awake()
-    //{
-    //    newPosition = transform.localPosition;
-    //}
-
-    private void FixedUpdate()
+    void FixedUpdate()
     {
+        // Enemies stop at their attack range
+        if (Vector3.Distance(transform.position, motherTree.position) >= attackRange)
+        {
+            MoveTowardsMotherTree();
+        }
         RotateTowardsMotherTree();
-        MoveTowardsMotherTree();
     }
 
     void RotateTowardsMotherTree()
     {
         // Smoothly rotate towards target
         var targetRotation = Quaternion.LookRotation(motherTree.transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
     }
 
     void MoveTowardsMotherTree()
     {
-        //newPosition.z += 1;
-        transform.position = Vector3.MoveTowards(transform.position, motherTree.transform.position, curve.Evaluate(movementSpeed * Time.deltaTime));
+        // TODO: fix y position the enemies move towards
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(motherTree.transform.position.x, 1, motherTree.transform.position.z), curve.Evaluate(movementSpeed * Time.deltaTime));
     }
 }
