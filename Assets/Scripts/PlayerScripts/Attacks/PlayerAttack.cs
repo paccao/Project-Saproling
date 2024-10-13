@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Assets.Scripts.PlayerScripts.Support;
-using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -13,10 +10,6 @@ public class PlayerAttack : MonoBehaviour
 
     private GameObject player;
 
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(AttackOnCooldown());
