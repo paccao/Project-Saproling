@@ -2,34 +2,54 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Transform motherTree;
+    [SerializeField] private Transform player;
     [SerializeField] private AnimationCurve curve;
+    [SerializeField] private GameObject enemyAttack;
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private float attackRange = 4f;
+    [SerializeField] private float attackSpeed = 4f;
+    [SerializeField] private float attackDamage = 1f;
 
     private Vector3 newPosition;
+    private float attackTime = 0f;
 
     void FixedUpdate()
     {
-        // Enemies stop at their attack range
-        if (Vector3.Distance(transform.position, motherTree.position) >= attackRange)
+        RotateTowardsPlayer();
+
+        if (Vector3.Distance(transform.position, player.position) >= attackRange)
         {
-            MoveTowardsMotherTree();
+            MoveTowardsPlayer();
+        } else
+        {
+            attackTime += Time.deltaTime;
+            while (attackTime >= attackSpeed)
+            {
+                Attack();
+                attackTime -= attackSpeed;
+            }
         }
-        RotateTowardsMotherTree();
     }
 
-    void RotateTowardsMotherTree()
+    void RotateTowardsPlayer()
     {
         // Smoothly rotate towards target
-        var targetRotation = Quaternion.LookRotation(motherTree.transform.position - transform.position);
+        var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
     }
 
-    void MoveTowardsMotherTree()
+    void MoveTowardsPlayer()
     {
         // TODO: fix y position the enemies move towards
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(motherTree.transform.position.x, 1, motherTree.transform.position.z), curve.Evaluate(movementSpeed * Time.deltaTime));
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, 1, player.transform.position.z), curve.Evaluate(movementSpeed * Time.deltaTime));
+    }
+
+    void Attack()
+    {
+        // TODO: Spawn animation
+        GameObject.Instantiate(enemyAttack, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
+        // Deal damage to player
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(attackDamage);
     }
 }

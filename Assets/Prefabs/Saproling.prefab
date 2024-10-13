@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45567df0fdcdfb47bb09e878ccfc2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motherTree: {fileID: 2596831393598511543, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
+  player: {fileID: 2596831393598511543, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -151,9 +151,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  enemyAttack: {fileID: 8810603805509348803, guid: 606cddff1e0cf2c46953bfea0220e93b, type: 3}
   rotateSpeed: 10
   movementSpeed: 5
   attackRange: 4
+  attackSpeed: 4
+  attackDamage: 1
 --- !u!1 &2742597297398192149
 GameObject:
   m_ObjectHideFlags: 0
