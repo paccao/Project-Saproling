@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Test: {fileID: 5621038678105228290, guid: c68d0c5759f3faa4391a79589adf87a4, type: 3}
   Radius: 4
-  Damage: 0
+  Damage: 1

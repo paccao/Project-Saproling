@@ -8,11 +8,9 @@ namespace Assets.Scripts.PlayerScripts.Attacks.BasicAttack
 
         void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other);
-
             if (other.gameObject.tag == "Enemy")
             {
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             }
         }
 

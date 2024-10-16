@@ -205,13 +205,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.67559016, y: 0, z: 0, w: 0.7372774}
-  m_LocalPosition: {x: 0, y: 50, z: -5}
+  m_LocalRotation: {x: 0.62693465, y: -0, z: -0, w: 0.77907187}
+  m_LocalPosition: {x: 0, y: 38.9, z: -8.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 85, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 77.649, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,10 +432,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2272465355069639487, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1380176366}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -517,8 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground: {fileID: 4922237723492996555}
   saproling: {fileID: 2007842124459402751, guid: bc6367ed3c206044d92f710f1b912cb0, type: 3}
-  motherTree: {fileID: 0}
-  spawnRate: 2
+  spawnRate: 3
   spawnHeight: 1
 --- !u!4 &1084217176
 Transform:
@@ -535,25 +531,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1380176363 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2272465355069639487, guid: 4bc0c94c072ef1e4a87b126b52b6eef2, type: 3}
-  m_PrefabInstance: {fileID: 819990359}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1380176366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380176363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80875e697b91182478ad3c266227af3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackTemplates: []
-  AttackCooldown: 2
 --- !u!1 &2106555112
 GameObject:
   m_ObjectHideFlags: 0

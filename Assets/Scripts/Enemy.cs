@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : EntityBase
 {
     [SerializeField] private Transform player;
     [SerializeField] private AnimationCurve curve;
@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 
     private Vector3 newPosition;
     private float attackTime = 0f;
+
+    public float health = 5f;
 
     void FixedUpdate()
     {
@@ -34,7 +36,6 @@ public class Enemy : MonoBehaviour
 
     void RotateTowardsPlayer()
     {
-        // Smoothly rotate towards target
         var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
     }
@@ -49,5 +50,21 @@ public class Enemy : MonoBehaviour
     {
         GameObject.Instantiate(enemyAttack, new Vector3(transform.position.x, transform.localPosition.y + 1.5f, transform.position.z), Quaternion.identity);
         GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(attackDamage);
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public override void Die()
+    {
+        Debug.Log("Enemy dead");
+        // Drop rewards
+        Destroy(this.gameObject);
     }
 }
