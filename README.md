@@ -1,5 +1,9 @@
 # Project-Saproling
 
+## Development guide
+
+You can run `pre-commit run -a` to fix all files in the project. This will run automatically on `git commit`
+
 ## Dev dependencies
 
 ### Setup python virtualenv
