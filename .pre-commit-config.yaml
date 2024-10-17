@@ -1,0 +1,11 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    -   id: check-json
+    -   id: end-of-file-fixer
+    # -   id: trailing-whitespace
+    #     exclude: '.*\.asset|.*\.meta|.*\.mat|.*\.prefab|.*\.unity'
+    -   id: mixed-line-ending
+        args: [--fix,crlf]
+    -   id: requirements-txt-fixer
